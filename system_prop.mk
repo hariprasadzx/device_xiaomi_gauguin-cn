@@ -48,4 +48,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCTY_OVERRIDES += \
     ro.telephony.default_network=33,22 \
     persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.wfc_avail_ovr=1
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.vendor.radio.mt_sms_ack=30 \
+    persist.sys.fflag.override.settings_provider_model=false
+
+# SoC
+PRODUCT_PRODUCTY_OVERRIDES += \
+    ro.soc.manufacturer=Qualcomm \
+    ro.soc.model=SM7225
