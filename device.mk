@@ -21,6 +21,7 @@ BOARD_BUILD_PRODUCT_IMAGE := true
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_TARGET_VNDK_VERSION := 30
+PRODUCT_EXTRA_VNDK_VERSIONS := 30
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
 # AAPT
@@ -56,12 +57,6 @@ PRODUCT_PACKAGES += \
 # A/B
 AB_OTA_UPDATER := false
 
-# Device Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/parts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
 
 # Display
 PRODUCT_PACKAGES += \
@@ -94,13 +89,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.mi_thermald.rc
 
-# IFAA manager
-PRODUCT_PACKAGES += \
-    org.ifaa.android.manager
-
-PRODUCT_BOOT_JARS += \
-    org.ifaa.android.manager
-
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_SYSTEM)/usr/keylayout/uinput-fpc.kl \
@@ -114,14 +102,6 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti-gauguin
-
-# NFC
-PRODUCT_PACKAGES += \
-    com.android.nfc_extras \
-    com.gsma.services.nfc \
-    NfcNci \
-    SecureElement \
-    Tag
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -174,6 +154,8 @@ PRODUCT_PACKAGES += \
     ims_ext_common.xml \
     qti-telephony-hidl-wrapper \
     qti_telephony_hidl_wrapper.xml \
+    qti-telephony-hidl-wrapper-prd \
+    qti_telephony_hidl_wrapper_prd.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
     telephony-ext \
@@ -185,15 +167,7 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
-
-# WiFi Display
-PRODUCT_PACKAGES += \
-    libdisplayconfig.qti \
-    libnl \
-    libqdMetaData \
-    libavservices_minijail \
-    libavservices_minijail_32 \
-    vendor.display.config@2.0
-
-PRODUCT_BOOT_JARS += \
-    WfdCommon
+    
+    
+# VNDK
+PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
