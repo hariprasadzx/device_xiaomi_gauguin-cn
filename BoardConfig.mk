@@ -30,6 +30,11 @@ BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 # Assert
 TARGET_OTA_ASSERT_DEVICE := gauguin,gauguininpro,gauguinpro
 
+# Build
+BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
 # Audio
 AUDIO_FEATURE_ENABLED_AAC_ADTS_OFFLOAD := true
 AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
@@ -68,6 +73,8 @@ BOARD_HAVE_QCOM_FM := true
 TARGET_INIT_VENDOR_LIB := libinit_gauguin
 TARGET_RECOVERY_DEVICE_MODULES := libinit_gauguin
 
+BOARD_USES_METADATA_PARTITION := true
+
 # Input
 TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY := 102
 
@@ -77,6 +84,7 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_DTB_OFFSET := 0x01F00000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0 androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 loop.max_part=7 cgroup.memory=nokmem,nosocket reboot=panic_warm
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
