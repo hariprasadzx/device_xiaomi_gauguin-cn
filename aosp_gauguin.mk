@@ -22,3 +22,7 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+#Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kraken.maintainer=HARI
