@@ -50,13 +50,22 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
-# Camera
-PRODUCT_PACKAGES += \
-    Snap
-
 # A/B
 AB_OTA_UPDATER := false
 
+# Device Settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
+
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.xiaomiparts.rc \
+    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomiparts.rc
+    
+    PRODUCT_PRODUCT_PROPERTIES += \
+    persist.lcd.hbm_mode=0 \
+    persist.lcd.cabc_mode=1
+    
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
@@ -92,8 +101,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
-# PRODUCT_BOOT_JARS += \
-#    org.ifaa.android.manager
+PRODUCT_BOOT_JARS += \
+   org.ifaa.android.manager
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -108,14 +117,6 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti-gauguin
-
-# NFC
-#PRODUCT_PACKAGES += \
- #   com.android.nfc_extras \
- #   com.gsma.services.nfc \
- #   NfcNci \
- #   SecureElement \
-  #  Tag
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -157,6 +158,7 @@ TARGET_USES_MKE2FS := true
 # Remove unwanted packages
 PRODUCT_PACKAGES += \
     RemovePackages
+
 # Soong
 PRODUCT_BOARD_PLATFORM := lito
 PRODUCT_USES_QCOM_HARDWARE := true
@@ -182,11 +184,3 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay \
     WifiOverlay
-    
-# Device Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.xiaomiparts.rc \
-    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomiparts.rc
