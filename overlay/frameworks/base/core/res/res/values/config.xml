@@ -119,7 +119,7 @@
      <!-- Control whether the always on display mode is available. This should only be enabled on
          devices where the display has been tuned to be power efficient in DOZE and/or DOZE_SUSPEND
          states. -->
-     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
+     <bool name="config_dozeAlwaysOnDisplayAvailable">false</bool>
      <!-- Control whether the always on display mode is enabled by default. This value will be used
          during initialization when the setting is still null. -->
      <bool name="config_dozeAlwaysOnEnabled">false</bool>
@@ -488,7 +488,7 @@
      </integer-array>
 
      <!-- List of files pinned by the Pinner Service with the JIT Zygote boot image b/119800099 -->
-     <string-array translatable="false" name="config_jitzygoteBootImagePinnerServiceFiles">
+     <!--string-array translatable="false" name="config_jitzygoteBootImagePinnerServiceFiles">
           <item>/system/bin/surfaceflinger</item>
           <item>/system/framework/framework.jar</item>
           <item>/system/framework/services.jar</item>
@@ -497,7 +497,7 @@
           <item>/apex/com.android.media/javalib/updatable-media.jar</item>
           <item>/system_ext/priv-app/SystemUI/SystemUI.apk</item>
           <item>/system/lib64/libsurfaceflinger.so</item>
-     </string-array>
+     </string-array-->
 
      <!-- Indicate available ColorDisplayManager.COLOR_MODE_xxx. -->
      <integer-array name="config_availableColorModes">
