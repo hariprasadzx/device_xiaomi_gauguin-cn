@@ -15,3 +15,4 @@ persist.camera.                u:object_r:vendor_persist_camera_prop:s0
 vendor.camera.                 u:object_r:vendor_persist_camera_prop:s0
 
 vendor.sys.thermal.                u:object_r:thermal_normal_prop:s0
+

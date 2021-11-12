@@ -50,6 +50,10 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+# Camera
+PRODUCT_PACKAGES += \
+    GCam
+
 # A/B
 AB_OTA_UPDATER := false
 
@@ -101,8 +105,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     org.ifaa.android.manager
 
-PRODUCT_BOOT_JARS += \
-   org.ifaa.android.manager
+# PRODUCT_BOOT_JARS += \
+#    org.ifaa.android.manager
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -118,6 +122,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti-gauguin
 
+# NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    com.gsma.services.nfc \
+    NfcNci \
+    SecureElement \
+    Tag
+    
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay 

@@ -7,7 +7,7 @@
 # Inherit from gauguin device
 $(call inherit-product, device/xiaomi/gauguin/device.mk)
 
-# Inherit some common Palladium stuff.
+# Inherit some common PixelExperience stuff.
 $(call inherit-product, vendor/palladium/config/common_full_phone.mk)
 TARGET_USES_AOSP_RECOVERY := true
 TARGET_BOOT_ANIMATION_RES := 1080
