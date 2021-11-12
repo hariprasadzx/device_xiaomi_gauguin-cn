@@ -57,19 +57,7 @@ PRODUCT_PACKAGES += \
 # A/B
 AB_OTA_UPDATER := false
 
-# Device Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
 
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.xiaomiparts.rc \
-    $(LOCAL_PATH)/parts/init.xiaomiparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomiparts.rc
-    
-    PRODUCT_PRODUCT_PROPERTIES += \
-    persist.lcd.hbm_mode=0 \
-    persist.lcd.cabc_mode=1
-    
 # Display
 PRODUCT_PACKAGES += \
     libdisplayconfig \
@@ -121,7 +109,11 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.lights-service.qti-gauguin
-
+    
+# Device Settings
+PRODUCT_PACKAGES += \
+    XiaomiParts
+    
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
